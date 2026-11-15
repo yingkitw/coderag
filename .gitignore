@@ -1,6 +1,24 @@
+# Build artifacts
 /target
+**/*.rs.bk
+
+# Local coderag index (never index the indexer's own index)
 .coderag/
 *.db
 *.db-wal
 *.db-shm
+
+# Local agent / dev-loop docs — kept on disk, not published
+AGENTS.md
+MEMORY.md
+
+# Environment / secrets
+.env
+.env.*
+
+# Editors & OS
+.idea/
+.vscode/
+*.swp
+*.swo
 .DS_Store

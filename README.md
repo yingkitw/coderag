@@ -189,4 +189,4 @@ cargo run -p coderag-cli -- search "chunker"   # dogfood
 
 ## License
 
-MIT.
+Apache-2.0 — see [LICENSE](LICENSE).
