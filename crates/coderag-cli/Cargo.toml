@@ -10,6 +10,7 @@ rust-version.workspace = true
 [[bin]]
 name = "coderag"
 path = "src/main.rs"
+doc = false
 
 [features]
 # Build with the sqlite-vec candidate mirror: `--features ann`
