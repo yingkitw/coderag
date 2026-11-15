@@ -6,6 +6,9 @@ edition.workspace = true
 license.workspace = true
 repository.workspace = true
 rust-version.workspace = true
+# Not published to crates.io: crates.io carries the `coderag` library only.
+# Build from source: cargo install --path crates/coderag-cli [--features ann]
+publish = false
 
 [[bin]]
 name = "coderag"

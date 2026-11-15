@@ -114,8 +114,8 @@ table kept transactionally in sync with the chunk rows, instead of loading
 every embedding into Rust:
 
 ```console
-$ cargo install coderag-cli --features ann   # or: cargo build --features ann
-$ coderag status
+$ cargo install --path crates/coderag-cli --features ann   # CLI is repo-only
+$ cargo run -p coderag-cli --features ann -- status
 ann       : sqlite-vec (feature on)
 $ coderag search "retry backoff" --no-ann    # force the exact scan anytime
 ```
@@ -141,7 +141,7 @@ For a local LLM server, set `OPENAI_BASE_URL` (or `base_url` in the config)
 to e.g. `http://localhost:11434/v1` and pick a model it hosts. Batching and
 exponential-backoff retries on 429/5xx are built in.
 
-## Library usage
+## Libraries
 
 ```rust,ignore
 use coderag::config::CodeRagConfig;
@@ -157,8 +157,19 @@ for hit in hits {
 }
 ```
 
+The library is published on crates.io:
+
+```console
+$ cargo add coderag
+```
+
 Implement `EmbeddingProvider` (one async method) to plug in any embedding
-source; the store and engine don't care where vectors come from.
+source; the store and engine don't care where vectors come from. The CLI is
+not published — install it from this repo:
+
+```console
+$ cargo install --path crates/coderag-cli
+```
 
 ## Languages
 

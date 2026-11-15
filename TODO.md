@@ -46,6 +46,11 @@ the bottom.
 
 ## Done
 
+- 2026-11-15 — Release: `coderag 0.1.0` published to crates.io (Apache-2.0,
+  verified from a scratch consumer project: add → index → search). The CLI
+  crate is repo-only (`publish = false`); its 0.1.0 upload was removed by
+  crates.io itself (index entry carries a delete-marker), so the registry
+  carries the library alone. Docs updated (install paths, license).
 - 2026-11-15 — Housekeeping: license switched MIT → Apache-2.0 (LICENSE
   added, manifests + README updated, repository URL pointed at
   yingkitw/coderag); GitHub Actions workflow removed — the Step 3 gate is
@@ -95,3 +100,4 @@ the bottom.
 | 2026-11-15 (c) | 4 (28 tests green, coverage unmeasured) | 4 (golden harness: 13/15 strict top-1, dogfood good; openai hits@k unmeasured — needs a key) | 4 (clippy-clean, chunker is the hot spot) | 5 (docs_sync enforced) | 5 (filters + json everywhere; library options mirror CLI flags) | 4 (dep-light; globset reused via ignore's tree; 9 grammars default-on) | 26 | Correctness/Maintainability/Retrieval tie at 4 → coverage run (llvm-cov) next, then IDF lexical (feeds both Retrieval and Correctness) |
 | 2026-11-15 (d) | 4 (27 default + 30 ann tests green, coverage unmeasured) | 4 (same as (c); ANN parity proven on goldens, 0.94 recall on synthetic documented) | 4 (clippy-clean on both feature sets; one audited unsafe site) | 5 (docs_sync enforced; CI covers feature matrix) | 5 (filters, --no-ann, ann line in status) | 4 (default build unchanged: sqlite-vec fully optional; ann build +1 C dep) | 26 | Coverage measurement (llvm-cov) is the un-run evidence → next: run it, then act on the weakest measured dimension |
 | 2026-11-15 (e) | 4 (unchanged; gate re-run green post-housekeeping) | 4 (unchanged) | 4 (unchanged) | 5 (docs_sync enforced locally; NOTE: hosted CI removed — gate is a pre-push manual step now, slight regression in enforcement) | 5 (unchanged) | 4 (unchanged) | 26 | Docs enforcement weakened by CI removal → compensate: run the full gate (Step 3) before every push; revisit hosted CI if lapses occur |
+| 2026-11-15 (f) | 4 (unchanged; 27 default + 30 ann tests green) | 4 (unchanged) | 4 (unchanged) | 5 (license/install docs accurate; library published and consumer-verified) | 5 (unchanged) | 4 (crates.io carries the library only; CLI build-from-repo) | 26 | Coverage still unmeasured → next action remains a coverage run, then the weakest measured dimension |
