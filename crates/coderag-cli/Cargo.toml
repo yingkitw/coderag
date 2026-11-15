@@ -1,0 +1,29 @@
+[package]
+name = "coderag-cli"
+description = "Command-line interface for the coderag code-retrieval engine."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "coderag"
+path = "src/main.rs"
+
+[features]
+# Build with the sqlite-vec candidate mirror: `--features ann`
+ann = ["coderag/ann"]
+
+[dependencies]
+anyhow = { workspace = true }
+coderag = { workspace = true }
+clap = { workspace = true }
+notify = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
